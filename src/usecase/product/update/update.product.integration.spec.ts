@@ -3,6 +3,7 @@ import ProductFactory from "../../../domain/product/factory/product.factory";
 import ProductModel from "../../../infrastructure/product/repository/sequelize/product.model";
 import ProductRepository from "../../../infrastructure/product/repository/sequelize/product.repository";
 import UpdateProductUseCase from "./update.product.usecase";
+import Product from "../../../domain/product/entity/product";
 
 describe("Test integration update product use case", () => {
   let sequelize: Sequelize;
@@ -27,8 +28,8 @@ describe("Test integration update product use case", () => {
     const productRepository = new ProductRepository();
     const updateProductUseCase = new UpdateProductUseCase(productRepository);
 
-    const product = ProductFactory.create("a", "Product Name", 15.5);
-
+    const productFactory = ProductFactory.create("a", "Product Name", 15.5);
+    const product = new Product(productFactory.id, productFactory.name, productFactory.price);
     await productRepository.create(product);
 
     const input = {

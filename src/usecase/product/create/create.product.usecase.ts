@@ -15,7 +15,6 @@ export default class CreateProductUseCase {
     const product = ProductFactory.create("a",
       input.name,
       input.price,
-
     );
     await this.productRepository.create(product);
     return {
