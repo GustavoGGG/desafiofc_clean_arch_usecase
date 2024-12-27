@@ -18,7 +18,7 @@ class OutputMapper {
   static toOutput(product: ProductInterface[]): OutputListProductDto {
     return {
       products: product.map((product) => ({
-        id: product.id,
+        id: product.getId,
         name: product.name,
         price: product.price
       })),
