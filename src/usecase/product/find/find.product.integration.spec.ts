@@ -29,7 +29,7 @@ describe("Test find product use case", () => {
     const findProductUseCase = new FindProductUseCase(productRepository);
 
     const productFactory = ProductFactory.create("a", "Product Name", 15.5);
-    const product = new Product(productFactory.id, productFactory.name, productFactory.price);
+    const product = new Product(productFactory.getId, productFactory.name, productFactory.price);
 
     await productRepository.create(product);
 

@@ -7,7 +7,7 @@ const product = ProductFactory.create("a",
 );
 
 const input = {
-  id: product.id,
+  id: product.getId,
   name: "Product Updated",
   price: 20
 };

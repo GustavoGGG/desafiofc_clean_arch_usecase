@@ -29,7 +29,7 @@ describe("Test integration update product use case", () => {
     const updateProductUseCase = new UpdateProductUseCase(productRepository);
 
     const productFactory = ProductFactory.create("a", "Product Name", 15.5);
-    const product = new Product(productFactory.id, productFactory.name, productFactory.price);
+    const product = new Product(productFactory.getId, productFactory.name, productFactory.price);
     await productRepository.create(product);
 
     const input = {

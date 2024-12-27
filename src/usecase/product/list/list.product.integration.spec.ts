@@ -31,8 +31,8 @@ describe("Test integration list product use case", () => {
 
     const productFactory1 = ProductFactory.create("a", "Product Name", 15.5);
     const productFactory2 = ProductFactory.create("a", "Product Name 2", 18.5);
-    const product1 = new Product(productFactory1.id, productFactory1.name, productFactory1.price);
-    const product2 = new Product(productFactory2.id, productFactory2.name, productFactory2.price);
+    const product1 = new Product(productFactory1.getId, productFactory1.name, productFactory1.price);
+    const product2 = new Product(productFactory2.getId, productFactory2.name, productFactory2.price);
 
     await productRepository.create(product1);
     await productRepository.create(product2);
